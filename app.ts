@@ -12,7 +12,7 @@ const app: Express = express();
 
 app.use(bodyParser.json());
 // const port = process.env.PORT;
-const port = 5000;
+const port = 3000;
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");

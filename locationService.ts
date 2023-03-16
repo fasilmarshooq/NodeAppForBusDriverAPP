@@ -1,4 +1,4 @@
-import { FireBaseReference } from "./firebaseReference";
+import { FireBaseHelper } from "./firebaseReference";
 import "firebase/database";
 import { child, get } from "firebase/database";
 
@@ -7,14 +7,15 @@ interface BusInfo {
   schoolId: number;
   busId: number;
 }
-try {
-  reference = new FireBaseReference().getReference();
-} catch (e) {
-  console.log(e);
-}
+
 
 export class LocationService {
   public async GetCurrentLocation(busInfo: BusInfo): Promise<any> {
+    try {
+      reference = new FireBaseHelper().getReference();
+    } catch (e) {
+      console.log(e);
+    }
     return get(
       child(
         reference,
