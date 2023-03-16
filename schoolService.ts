@@ -1,9 +1,8 @@
-import fs from "fs";
+import { schoolsList } from "./schools";
 
 export class SchoolService {
   public Get(): object {
-    let school: string = fs.readFileSync("schools.json", "utf8");
-    return JSON.parse(school);
+    return schoolsList;
   }
 }
 
