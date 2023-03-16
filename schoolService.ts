@@ -1,19 +1,15 @@
-
-const fs = require("fs");
-
+import fs from "fs";
 
 export class SchoolService {
-
-    public Get() : object {
-        let school : string =  fs.readFileSync('schools.json','utf8');
-        return JSON.parse(school);
-    }
+  public Get(): object {
+    let school: string = fs.readFileSync("schools.json", "utf8");
+    return JSON.parse(school);
+  }
 }
 
-//  function GetSchools() : object {
-//     String schools = fs.readFileSync('schools.json','utf8')
-//     return JSON.parse(schools);
-  
-// }
-
-// module.exports = {GetSchools};
+export interface School {
+  Id: number;
+  Name: string;
+  ShortName: string;
+  Url: string;
+}
